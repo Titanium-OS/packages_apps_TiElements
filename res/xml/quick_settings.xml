@@ -26,6 +26,12 @@
         android:entryValues="@array/quick_pulldown_values"
         android:defaultValue="1" />
 
+    <com.titanium.support.preferences.SecureSettingSwitchPreference
+        android:key="quick_settings_vibrate"
+        android:title="@string/quick_settings_vibrate_title"
+        android:summary="@string/quick_settings_vibrate_summary"
+        android:defaultValue="false" />
+
     <com.titanium.support.preferences.SystemSettingSwitchPreference
         android:key="qs_tile_title_visibility"
         android:title="@string/qs_tile_title_visibility_title"
