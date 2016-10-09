@@ -10,4 +10,10 @@
         android:summary="@string/aggressive_battery_saver_summary"
         android:fragment="com.titanium.tielements.fragments.AggressiveBatterySaver" />
 
+    <Preference
+        android:key="battery_bar_category"
+        android:title="@string/battery_bar_title"
+        android:summary="@string/battery_bar_summary"
+        android:fragment="com.titanium.tielements.fragments.BatteryBarSettings" />
+
 </PreferenceScreen>
