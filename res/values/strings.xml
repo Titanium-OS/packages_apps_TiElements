@@ -610,4 +610,8 @@
     <string name="battery_percentage_inside">Enabled (inside icon)</string>
     <string name="battery_percentage_estimate">Enabled (estimate)</string>
 
+    <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+
 </resources>
+
