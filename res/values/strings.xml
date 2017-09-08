@@ -81,4 +81,16 @@
     <string name="statusbar_icons_category">Statusbar Icons</string>
     <string name="statusbar_items_title">Statusbar icons</string>
     <string name="statusbar_items_summary">Toggle the visibility of icons in statusbar</string>
+
+    <!-- Lockscreen information -->
+    <string name="lockscreen_info_category_title">Lockscreen info elements</string>
+
+    <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
+    <string name="lockscreen_tuner_summary">Modify the shortcuts shown in the lockscreen</string>
+
+    <!-- Navbar options -->
+    <string name="three_buttons_nav_bar">3 buttons Navigation</string>
+    <string name="nav_bar_tuner_title">Navigation bar tuner</string>
+    <string name="nav_bar_tuner_summary">Change navbar layout</string>
 </resources>

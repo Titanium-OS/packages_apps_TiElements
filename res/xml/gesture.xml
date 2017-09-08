@@ -21,6 +21,19 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
+        android:title="@string/three_buttons_nav_bar">
+
+        <Preference
+            android:title="@string/nav_bar_tuner_title"
+            android:summary="@string/nav_bar_tuner_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.NavBarActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
          android:key="dtts_category"
          android:title="@string/dtts_category_title">
 
