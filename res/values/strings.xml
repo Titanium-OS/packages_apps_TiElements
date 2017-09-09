@@ -63,5 +63,11 @@
     <string name="loading">Loading\u2026</string>
     <string name="reset">Reset</string>
     <string name="app_name">TiElements</string>
-</resources>
 
+    <!-- Double Tap gestures -->
+    <string name="dtts_category_title">Double tap to sleep</string>
+
+    <!-- Double tap-to-sleep -->
+    <string name="double_tap_to_sleep_title">Status bar</string>
+    <string name="double_tap_to_sleep_summary">Double tap status bar to put the device to sleep</string>
+</resources>
