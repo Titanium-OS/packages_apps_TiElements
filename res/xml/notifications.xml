@@ -4,6 +4,12 @@
     android:title="@string/menu_notifications"
     xmlns:settings="http://schemas.android.com/apk/res-auto">
 
+    <!-- Heads up -->
+    <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:fragment="com.titanium.tielements.fragments.HeadsUpSettings" />
+
     <PreferenceCategory
         android:title="@string/light_settings_header">
 
