@@ -39,6 +39,10 @@ public class Misc extends SettingsPreferenceFragment implements
     
     private static final String TAG = "Misc";
 
+    private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
+
+    private ListPreference mHeadsetRingtoneFocus;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +50,14 @@ public class Misc extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.misc);
         setRetainInstance(true);
 
-        ContentResolver resolver = getActivity().getContentResolver();
+        final ContentResolver resolver = getActivity().getContentResolver();
+
+        mHeadsetRingtoneFocus = (ListPreference) findPreference(RINGTONE_FOCUS_MODE);
+        int mHeadsetRingtoneFocusValue = Settings.Global.getInt(resolver,
+                Settings.Global.RINGTONE_FOCUS_MODE, 0);
+        mHeadsetRingtoneFocus.setValue(Integer.toString(mHeadsetRingtoneFocusValue));
+        mHeadsetRingtoneFocus.setSummary(mHeadsetRingtoneFocus.getEntry());
+        mHeadsetRingtoneFocus.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -72,6 +83,15 @@ public class Misc extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
+        if (preference == mHeadsetRingtoneFocus) {
+            int mHeadsetRingtoneFocusValue = Integer.valueOf((String) objValue);
+            int index = mHeadsetRingtoneFocus.findIndexOfValue((String) objValue);
+            mHeadsetRingtoneFocus.setSummary(
+                    mHeadsetRingtoneFocus.getEntries()[index]);
+            Settings.Global.putInt(getContentResolver(), Settings.Global.RINGTONE_FOCUS_MODE,
+                    mHeadsetRingtoneFocusValue);
+            return true;
+        }
         return true;
     }
 
