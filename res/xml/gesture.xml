@@ -71,12 +71,14 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="Misc Gestures">
+
     <!-- 3 finger screenshots -->
     <com.titanium.support.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
         android:title="@string/three_finger_gesture"
         android:summary="@string/three_finger_gesture_summary"
-        settings:allowDividerAbove="true"
         android:defaultValue="false" />
 
     <com.titanium.support.preferences.SystemSettingSwitchPreference
@@ -94,5 +96,13 @@
         android:entryValues="@array/torch_long_press_power_timeout_values"
         android:dependency="torch_long_press_power_gesture"
         android:persistent="false" />
+
+    <com.titanium.support.preferences.SystemSettingSwitchPreference
+        android:key="status_bar_brightness_control" 
+        android:title="@string/status_bar_toggle_brightness" 
+        android:summary="@string/status_bar_toggle_brightness_summary"
+        android:defaultValue="false" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
