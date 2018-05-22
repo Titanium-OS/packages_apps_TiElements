@@ -514,4 +514,15 @@
     <string name="enable_fc_notifications_title">Force close notifications</string>
     <string name="enable_fc_notifications_summary">Show a dialog when an application crashes</string>
 
+    <!-- Quick settings brightness slider -->
+    <string name="brightness_slider">Brightness Slider</string>
+    <string name="qs_brightness_slider_title">Brightness slider position</string>
+    <string name="qs_brightness_slider_hide">Hidden</string>
+    <string name="qs_brightness_slider_top">Top</string>
+    <string name="qs_brightness_slider_bottom">Bottom</string>
+
+    <!-- Quick settings brightness icon -->
+    <string name="brightness_icon_title">Auto brightness icon</string>
+    <string name="brightness_icon_summary">Show toggle for adaptive brightness near the slider</string>
+
 </resources>
