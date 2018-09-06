@@ -29,6 +29,7 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
+import com.android.internal.util.titanium.TitaniumUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
@@ -39,6 +40,7 @@ public class Notifications extends SettingsPreferenceFragment implements
     
     private static final String TAG = "Notifications";
 
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
     private static final String KEY_CHARGING_LIGHT = "charging_light";
     private static final String LED_CATEGORY = "led";
 
@@ -69,6 +71,11 @@ public class Notifications extends SettingsPreferenceFragment implements
         } else {
             mLedCategory = findPreference(LED_CATEGORY);
             mLedCategory.setVisible(false);
+        }
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!TitaniumUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(incallVibCategory);
         }
     }
 
