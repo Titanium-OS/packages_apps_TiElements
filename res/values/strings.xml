@@ -76,4 +76,9 @@
     <!-- Screenshot Sound -->
     <string name="screenshot_sound_title">Screenshot sound</string>
     <string name="screenshot_sound_summary">Toggle sound played while taking screenshot</string>
+
+    <!-- Statusbar Tuner -->
+    <string name="statusbar_icons_category">Statusbar Icons</string>
+    <string name="statusbar_items_title">Statusbar icons</string>
+    <string name="statusbar_items_summary">Toggle the visibility of icons in statusbar</string>
 </resources>
