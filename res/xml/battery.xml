@@ -10,7 +10,14 @@
             android:summary="@string/wakeup_when_plugged_unplugged_summary"
             android:defaultValue="true" />
 
+        <Preference
+            android:key="batterybar_settings"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:fragment="com.titanium.tielements.fragments.BatterybarSettings" />
+
    <PreferenceCategory
+
         android:key="aggressive_battery"
         android:title="@string/aggressive_battery_title">
 
