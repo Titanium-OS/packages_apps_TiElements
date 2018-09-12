@@ -187,4 +187,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+
+        android:key="volume_rocker"
+        android:title="@string/volume_title">
+
+        <Preference
+            android:key="volume_key"
+            android:fragment="com.titanium.tielements.fragments.Volume"
+            android:title="@string/volume_title"
+            android:summary="@string/volume_summary" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

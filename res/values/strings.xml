@@ -214,4 +214,12 @@
     <string name="swap_navigation_keys_title">Swap keys</string>
     <string name="swap_navigation_keys_title_summary">Swap back and recents hardware keys</string>
 
+    <!-- Volume Rockers -->
+    <string name="volume_title">Volume Rockers</string>
+    <string name="volume_summary">Customize settings for volume buttons</string>
+
+    <!-- Volume Button Music Control -->
+    <string name="volume_rocker_music_controls_title">Playback control</string>
+    <string name="volume_rocker_music_controls_summary">Long press volume buttons to switch tracks while screen off</string>
+
 </resources>
