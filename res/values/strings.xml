@@ -419,4 +419,8 @@
 Aggressive Battery Saver helps you increase battery life by using your device less. Aggressive Idle is a feature that makes the device idle constants more aggressive and ignores device motion when entering doze mode.
 
 Aggressive Standby is a feature that stops apps from running in the background as much."</string>
+
+    <!-- Quick Settings -->
+    <string name="lockscreen_qs_disabled_title">Disable quick settings when locked</string>
+    <string name="lockscreen_qs_disabled_summary">Disable expanding quick settings on secure lock screens</string>
 </resources>
