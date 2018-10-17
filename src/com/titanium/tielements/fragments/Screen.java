@@ -45,13 +45,15 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
+import com.titanium.tielements.display.QsTileStylePreferenceController;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class Screen extends DashboardFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
-    
+
     private static final String TAG = "Screen";
 
     @Override
@@ -104,6 +106,7 @@ public class Screen extends DashboardFragment implements
                 "android.theme.customization.adaptive_icon_shape"));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack.android"));
+        controllers.add(new QsTileStylePreferenceController(context));
         return controllers;
     }
 
