@@ -94,6 +94,12 @@
         android:defaultValue="18"
         android:persistent="false" />
 
+    <PreferenceScreen
+        android:key="lockscreen_colors"
+        android:title="@string/lockscreen_colors"
+        android:summary="@string/lockscreen_colors_summary"
+        android:fragment="com.titanium.tielements.fragments.LockColors" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
