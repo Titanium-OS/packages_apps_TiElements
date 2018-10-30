@@ -4,6 +4,12 @@
     android:title="@string/menu_animations"
     xmlns:settings="http://schemas.android.com/apk/res-auto">
 
+    <com.titanium.support.preferences.GlobalSettingSwitchPreference
+        android:key="disable_transition_animations"
+        android:title="@string/disable_transition_animations_title"
+        android:summary="@string/disable_transition_animations_summary"
+        android:defaultValue="false" />
+
     <com.titanium.support.preferences.SystemSettingListPreference
         android:key="screen_off_animation"
         android:title="@string/screen_off_animation_title"
