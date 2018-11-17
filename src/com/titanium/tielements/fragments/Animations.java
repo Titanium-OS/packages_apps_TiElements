@@ -46,11 +46,13 @@ public class Animations extends SettingsPreferenceFragment implements
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "2";
+    private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
 
     private ListPreference mScrollingCachePref;
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mPowerMenuAnimations;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,6 +90,12 @@ public class Animations extends SettingsPreferenceFragment implements
         mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
         mScrollingCachePref.setOnPreferenceChangeListener(this);
+
+        mPowerMenuAnimations = (ListPreference) findPreference(POWER_MENU_ANIMATIONS);
+        mPowerMenuAnimations.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
+        mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+        mPowerMenuAnimations.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -108,7 +116,13 @@ public class Animations extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mTileAnimationStyle) {
+        if (preference == mPowerMenuAnimations) {
+            Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
+                    Integer.valueOf((String) objValue));
+            mPowerMenuAnimations.setValue(String.valueOf(objValue));
+            mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+            return true;
+        } else if (preference == mTileAnimationStyle) {
             int tileAnimationStyle = Integer.valueOf((String) objValue);
             Settings.System.putIntForUser(resolver, Settings.System.ANIM_TILE_STYLE,
                     tileAnimationStyle, UserHandle.USER_CURRENT);
