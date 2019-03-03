@@ -537,4 +537,5 @@ Aggressive Standby is a feature that stops apps from running in the background a
     <string name="network_traffic_layout">Activity layout</string>
     <string name="network_traffic_layout_h">Horizontal</string>
     <string name="network_traffic_layout_v">Vertical</string>
+    <string name="nettraf_font_size">Single net font size</string>
 </resources>
