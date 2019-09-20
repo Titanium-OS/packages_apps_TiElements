@@ -617,4 +617,7 @@
     <string name="nav_bar_tuner_title">Navigation bar tuner</string>
     <string name="nav_bar_tuner_summary">Change navbar layout</string>
 
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Invert layout</string>
+
 </resources>
