@@ -43,11 +43,15 @@ public class Gestures extends SettingsPreferenceFragment implements
 
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
+    private static final String LAYOUT_SETTINGS = "navbar_layout_views";
+    private static final String NAVIGATION_BAR_INVERSE = "navbar_inverse_layout";
     private static final String NAVBAR_TUNER = "navbar_tuner";
     private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
 
     private ListPreference mTorchLongPressPowerTimeout;
     private Preference mGestureSystemNavigation;
+    private Preference mLayoutSettings;
+    private SwitchPreference mSwapNavButtons;
     private Preference mNavbarTuner;
     private SystemSettingSwitchPreference mPixelNavAnimation;
 
@@ -71,7 +75,12 @@ public class Gestures extends SettingsPreferenceFragment implements
         mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
         mNavbarTuner = findPreference(NAVBAR_TUNER);
         mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
-        if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+        mLayoutSettings = findPreference(LAYOUT_SETTINGS);
+        mSwapNavButtons = findPreference(NAVIGATION_BAR_INVERSE);
+
+        if (!TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            prefScreen.removePreference(mLayoutSettings);
+        } else if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
         } else if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
@@ -79,6 +88,7 @@ public class Gestures extends SettingsPreferenceFragment implements
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
             prefScreen.removePreference(mNavbarTuner);
             prefScreen.removePreference(mPixelNavAnimation);
+            prefScreen.removePreference(mSwapNavButtons);
         }
     }
 
