@@ -65,6 +65,13 @@
     <string name="reset">Reset</string>
     <string name="app_name">TiElements</string>
 
+    <!-- Lockscreen Categories -->
+    <string name="ls_disable_elements">Lockscreen Info Elements</string>
+
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">Charging info</string>
+    <string name="lockscreen_battery_info_summary">Display charger max current, voltage, wattage and battery temperature while charging</string>
+
     <!-- Bluetooth battery status -->
     <string name="statusbar_icons_category">Statusbar Icons</string>
     <string name="bluetooth_battery_title">Bluetooth battery status</string>
