@@ -99,6 +99,9 @@
     <string name="media_art_title">Media artwork</string>
     <string name="media_art_summary">Show media cover art as the lockscreen background</string>
 
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Media artwork blur level</string>
+
     <!-- Pocket judge -->
     <string name="ls_unlocking">Unlocking</string>
     <string name="pocket_judge_title">Pocket detection</string>
