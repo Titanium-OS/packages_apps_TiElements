@@ -45,11 +45,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     private static final String TAG = "Lockscreen";
 
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+    private static final String LOCK_DATE_FONTS = "lock_date_fonts";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String FP_KEYSTORE = "fp_unlock_keystore";
 
     private ListPreference mLockClockFonts;
+    private ListPreference mLockDateFonts;
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintVib;
@@ -72,6 +74,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                 getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 34)));
         mLockClockFonts.setSummary(mLockClockFonts.getEntry());
         mLockClockFonts.setOnPreferenceChangeListener(this);
+
+        // Lockscreen Date Fonts
+        mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
+        mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_DATE_FONTS, 32)));
+        mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+        mLockDateFonts.setOnPreferenceChangeListener(this);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -129,6 +138,12 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                     Integer.valueOf((String) objValue));
             mLockClockFonts.setValue(String.valueOf(objValue));
             mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+            return true;
+        } else if (preference == mLockDateFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
+                    Integer.valueOf((String) objValue));
+            mLockDateFonts.setValue(String.valueOf(objValue));
+            mLockDateFonts.setSummary(mLockDateFonts.getEntry());
             return true;
         } else if (preference == mFingerprintVib) {
             boolean value = (Boolean) objValue;
