@@ -41,13 +41,15 @@ import com.titanium.support.preferences.*;
 
 public class Lockscreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    
+
     private static final String TAG = "Lockscreen";
 
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String FP_KEYSTORE = "fp_unlock_keystore";
 
+    private ListPreference mLockClockFonts;
     private FingerprintManager mFingerprintManager;
     private PreferenceCategory mFODIconPickerCategory;
     private SwitchPreference mFingerprintVib;
@@ -63,6 +65,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
         final PackageManager mPm = getActivity().getPackageManager();
+
+        // Lockscreen Clock Fonts
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 34)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FINGERPRINT_VIB);
@@ -115,7 +124,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         final String key = preference.getKey();
-        if (preference == mFingerprintVib) {
+        if (preference == mLockClockFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
+                    Integer.valueOf((String) objValue));
+            mLockClockFonts.setValue(String.valueOf(objValue));
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+            return true;
+        } else if (preference == mFingerprintVib) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
