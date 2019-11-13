@@ -4,4 +4,15 @@
     android:title="@string/menu_notifications"
     xmlns:settings="http://schemas.android.com/apk/res-auto">
 
+    <PreferenceCategory
+        android:title="@string/light_settings_header">
+
+        <Preference
+            android:key="charging_light"
+            android:title="@string/battery_light_settings"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.titanium.tielements.fragments.BatteryLightSettings" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
