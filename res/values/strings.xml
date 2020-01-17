@@ -613,5 +613,8 @@
     <!-- Lockscreen icons -->
     <string name="lockscreen_tuner_title">Lockscreen shortcuts</string>
 
-</resources>
+    <!-- Navbar options -->
+    <string name="nav_bar_tuner_title">Navigation bar tuner</string>
+    <string name="nav_bar_tuner_summary">Change navbar layout</string>
 
+</resources>
