@@ -40,7 +40,6 @@ public class Elements extends SettingsPreferenceFragment {
         View view = inflater.inflate(R.layout.elements, container, false);
         mFragmentManager = getActivity().getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        mFragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
         mFragment = new ElementsFragment();
         mFragmentTransaction.replace(R.id.fragment_container, mFragment, Constants.MAIN_VIEW);
         mFragmentTransaction.commit();
