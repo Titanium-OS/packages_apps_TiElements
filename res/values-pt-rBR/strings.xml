@@ -71,12 +71,41 @@
     <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Informação de carregamento</string>
     <string name="lockscreen_battery_info_summary">Apresentar a corrente máxima, voltagem, potência e temperatura da bateria ao carregar</string>
+	
+	<!-- Bluetooth battery status -->
+    <string name="statusbar_icons_category">Ícones da barra de estado</string>
+    <string name="bluetooth_battery_title">Estado da bateria Bluetooth</string>
+    <string name="bluetooth_battery_summary">Mostrar a percentagem da bateria dos dispositivos Bluetooth ligados, se disponível</string>
+
+    <!-- Double Tap gestures -->
+    <string name="gestures_title">Gestos</string>
+    <string name="double_tap_sleep_lockscreen_title">Duplo toque para desligar ecrã</string>
+    <string name="double_tap_sleep_lockscreen_summary">Toque duas vezes em qualquer lugar do ecrã de bloqueio para desligar o ecrã</string>
+    <string name="double_tap_sleep_gesture_title">Duplo toque para bloquear</string>
+    <string name="double_tap_sleep_gesture_summary">Toque duas vezes na barra de estado para bloquear o dispositivo</string>
 
     <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">Vibrar durante a chamada</string>
+    <string name="call_noti_options">Vibrar durante a chamada</string>
     <string name="incall_vibrate_connect_title">Vibrar ao ligar</string>
     <string name="incall_vibrate_call_wait_title">Vibrar durante chamada em espera</string>
     <string name="incall_vibrate_disconnect_title">Vibrar ao desligar</string>
+	
+	<!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Deslizar para captura de ecrã</string>
+    <string name="three_finger_gesture_summary">Deslize três dedos para baixo para capturar o ecrã</string>
+	
+	<!-- Lock screen cover art -->
+    <string name="lockscreen_media_category">Música</string>
+    <string name="media_art_title">Capas dos álbuns</string>
+    <string name="media_art_summary">Definir, como papel de parede no ecrã de bloqueio, a capa do álbum</string>
+
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Nível de desfocagem da capa do álbum</string>
+	
+	<!-- Pocket judge -->
+    <string name="ls_unlocking">Desbloquear</string>
+    <string name="pocket_judge_title">Detetação de bolso</string>
+    <string name="pocket_judge_summary">Bloquear a interação com o ecrã do dispositivo quando estiver no bolso</string>
 
     <!-- Power Menu -->
     <string name="hardware_keys_power_category">Botão de energia</string>
@@ -94,27 +123,40 @@
     <string name="powermenu_ls_advanced_reboot_summary">Mostrar o reinício avançado no ecrã de bloqueio</string>
     <string name="powermenu_ls_screenshot_summary">Mostrar a opção de captura de ecrã no ecrã de bloqueio</string>
     <string name="powermenu_ls_torch_summary">Mostrar a opção da lanterna no ecrã de bloqueio</string>
+	
+	<!-- Brightness control -->
+    <string name="status_bar_toggle_brightness">Controlo de luminosidade</string>
+    <string name="status_bar_toggle_brightness_summary">Ajustar a luminosidade arrastando o dedo no topo da barra de estado</string>
+
+    <!-- Quick Settings -->
+    <string name="lockscreen_qs_disabled_title">Destaivar as definições rápidas quando bloqueado</string>
+    <string name="lockscreen_qs_disabled_summary">Destaivar o painel de definições rápidas no ecrã de bloqueio seguro</string>
+
+    <!-- Quick pull down-->
+    <string name="quick_pulldown_title">Atalho para definições rápidas</string>
+    <string name="quick_pulldown_summary">A borda %1$s da barra de estado expande o painel de definições rápidas</string>
+    <string name="quick_pulldown_summary_always">Expandir sempre o painel de definições rápidas</string>
+    <string name="quick_pulldown_off">Desligado</string>
+    <string name="quick_pulldown_left">Esquerda</string>
+    <string name="quick_pulldown_right">Direita</string>
+    <string name="quick_pulldown_always">Sempre</string>
 
     <!-- Statusbar net monitor -->
-    <string name="statusbar_ntraffic">Rede</string>
-    <string name="traffic_title">Tráfego de rede</string>
-    <string name="traffic_summary">Indicadores do tráfego de rede</string>
-    <string name="network_traffic_state_title">Tráfego de rede</string>
-    <string name="network_traffic_state_summary">Mostrar a atividade da rede na barra de estado</string>
-    <string name="network_traffic_type">Selecionar tipo de atividade da rede</string>
-    <string name="show_network_traffic_up">Dados enviados</string>
+	<string name="network_traffic_state_title">Indicadores do tráfego de rede</string>
+    <string name="network_traffic_location">Localização dos indicadores de tráfego</string>
+    <string name="traffic_disabled">Disabled</string>
+    <string name="traffic_statusbar">Barra de estado</string>
+    <string name="traffic_expanded_statusbar">Barra de estado expandida</string>
+    <string name="network_traffic_autohide_threshold_title">Limite para ocultar automaticamente a atividade de rede (KB/s)</string>
+    <string name="network_traffic_arrow">Mostrar setas</string>
+    <string name="network_traffic_arrow_summary">Mostrar as setas de indicação do tráfego de rede</string>
+	<string name="network_traffic_type">Selecionar tipo de atividade da rede</string>
+	<string name="show_network_traffic_combined">Combinado (Enviado + Recebido)</string>
+    <string name="show_network_traffic_dynamic">Dinâmico</string>
+	<string name="show_network_traffic_up">Dados enviados</string>
     <string name="show_network_traffic_down">Dados recebidos</string>
     <string name="show_network_traffic_all">Dados enviados e recebidos</string>
-    <string name="network_traffic_autohide_threshold_title">Limite para ocultar automaticamente a atividade de rede (KB/s)</string>
-    <string name="network_traffic_hidearrow">Esconder setas</string>
-    <string name="network_traffic_hidearrow_summary">Esconder as setas de indicação do tráfego de rede</string>
-    <string name="nettraf_font_size">Tamanho da letra</string>
-    <string name="network_traffic_statusbar">Barra de estado</string>
-    <string name="network_traffic_header">Barra de estado expandida</string>
-
-    <!-- Network Traffic Location -->
-    <string name="network_traffic_location_title">Localização dos indicadores de tráfego</string>
-    <string name="network_traffic_location_summary">Mostrar os indicadores na barra de estado ou no cabeçalho da barra de estado expandida (recomendado para dispositivos com recorte no ecrã)</string>
+	<string name="nettraf_font_size">Tamanho da letra</string>
 
     <!-- HW Keys customization -->
     <string name="action_value_default_action" translatable="false">default</string>
@@ -175,10 +217,6 @@
     <string name="swap_navigation_keys_title">Trocar as teclas</string>
     <string name="swap_navigation_keys_title_summary">Trocar as teclas Voltar e Recentes</string>
 
-    <!-- ANBI -->
-    <string name="anbi_title">Toque acidental</string>
-    <string name="anbi_summary">Prevenir interação com os botões de navegação aquando da utilização do ecrã</string>
-
     <!-- Volume Rockers -->
     <string name="volume_title">Níveis de volume</string>
     <string name="volume_summary">Personalizar definições dos botõtes de volume</string>
@@ -199,7 +237,6 @@
     <string name="volume_rocker_wake_summary">O premir as teclas de volume acende o ecrã do dispositivo</string>
 
     <!-- Statusbar Tuner -->
-    <string name="statusbar_items_category">Ícones</string>
     <string name="statusbar_items_title">Ícones da barra de estado</string>
     <string name="statusbar_items_summary">Definir visibilidade dos ícones na barra de estado</string>
 
@@ -424,10 +461,6 @@
     <string name="disable_transition_animations_title">Desativar as animações de transição</string>
     <string name="disable_transition_animations_summary">Forçar o desativar de todas as animações de transição</string>
 
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Deslizar para captura de ecrã</string>
-    <string name="three_finger_gesture_summary">Deslize três dedos para baixo para capturar o ecrã</string>
-
     <!-- Heads up -->
     <string name="notification_stat">Barra de estado</string>
     <string name="heads_up_notifications">Notificações emergentes</string>
@@ -455,7 +488,6 @@
     <string name="aggressive_battery_saver_summary">Ativar o modo de gestão forçada da bateria automaticamente quando a poupança de bateria estiver ativa</string>
 
     <!-- Fingerprint authentication vibration -->
-    <string name="ls_unlocking">Desbloquear</string>
     <string name="fprint_sucess_vib_title">Vibração ao autenticar com impressão digital</string>
     <string name="fprint_sucess_vib_summary">Vibrar quando a autenticação por impressão digital for bem sucedida</string>
     <string name="fprint_error_vib_title">Vibração ao falhar</string>
@@ -482,26 +514,6 @@
     <string name="enable_fc_notifications_title">Caixas de diálogo de falhas</string>
     <string name="enable_fc_notifications_summary">Mostrar a caixa de diálogo sempre que uma aplicação falhar</string>
 
-    <!-- Lock screen cover art -->
-    <string name="lockscreen_media_category">Música</string>
-    <string name="media_art_title">Capas dos álbuns</string>
-    <string name="media_art_summary">Definir, como papel de parede no ecrã de bloqueio, a capa do álbum</string>
-
-    <!-- Lock screen media blur -->
-    <string name="lockscreen_media_blur_title">Nível de desfocagem da capa do álbum</string>
-
-    <!-- Data disabled icon -->
-    <string name="data_disabled_icon_title">Ícone de dados inativos</string>
-    <string name="data_disabled_icon_summary">Mostrar uma cruz junto ao ícone de rede quando os dados estiverem inativos</string>
-
-    <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Ícone de roaming</string>
-    <string name="roaming_indicator_icon_summary">Mostrar o ícone de roaming junto ao ícone de rede quando estiver fora do país</string>
-
-    <!-- Bluetooth battery status -->
-    <string name="bluetooth_battery_title">Estado da bateria Bluetooth</string>
-    <string name="bluetooth_battery_summary">Mostrar a percentagem da bateria dos dispositivos Bluetooth ligados, se disponível</string>
-
     <!-- Quick settings brightness slider -->
     <string name="brightness_slider">Controlo deslizante de luminosidade</string>
     <string name="qs_brightness_slider_title">Posição do controlo deslizante de luminosidade</string>
@@ -512,6 +524,10 @@
     <!-- Quick settings brightness icon -->
     <string name="brightness_icon_title">Ícone de luminosidade adaptável</string>
     <string name="brightness_icon_summary">Mostrar o ícone de luminosidade adaptável junto ao controlo deslizante</string>
+	
+	<!-- AOSP Gestures -->
+    <string name="aosp_gesture_preference">Gestos AOSP</string>
+    <string name="aosp_gesture_summary">Definições dos Gestos AOSP</string>
 
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_enable">Barras de visualização</string>
@@ -526,17 +542,6 @@
     <string name="lockscreen_solid_units_count_title">Número de linhas</string>
     <string name="lockscreen_solid_fudge_factor_title">Nível do factor fudge</string>
     <string name="lockscreen_solid_units_opacity_title">Opacidade das linhas</string>
-
-    <!-- AOSP Gestures -->
-    <string name="aosp_gesture_preference">Gestos AOSP</string>
-    <string name="aosp_gesture_summary">Definições dos Gestos AOSP</string>
-    
-    <!-- Double Tap gestures -->
-    <string name="gestures_title">Gestos</string>
-    <string name="double_tap_sleep_lockscreen_title">Duplo toque para desligar ecrã</string>
-    <string name="double_tap_sleep_lockscreen_summary">Toque duas vezes em qualquer lugar do ecrã de bloqueio para desligar o ecrã</string>
-    <string name="double_tap_sleep_gesture_title">Duplo toque para bloquear</string>
-    <string name="double_tap_sleep_gesture_summary">Toque duas vezes na barra de estado para bloquear o dispositivo</string>
 
     <!-- Screen off animation -->
     <string name="screen_off_animation_default">Por defeito</string>
@@ -604,5 +609,15 @@
     <string name="battery_percentage_next">Ativada</string>
     <string name="battery_percentage_inside">Ativa (dentro do ícone)</string>
     <string name="battery_percentage_estimate">Ativa (estimativa)</string>
+	
+    <!-- Lockscreen icons -->
+    <string name="lockscreen_tuner_title">Atalhos no ecrã de bloqueio</string>
+
+    <!-- Navbar options -->
+    <string name="nav_bar_tuner_title">Barra de navegação</string>
+    <string name="nav_bar_tuner_summary">Personalizara a barra de navegação</string>
+
+    <!-- Navbar options -->
+    <string name="navbar_invert_layout_title">Inverter navegação</string>
 
 </resources>
