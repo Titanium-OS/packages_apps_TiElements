@@ -46,6 +46,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
 import com.titanium.tielements.display.QsTileStylePreferenceController;
+import com.titanium.tielements.display.AccentColorPreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -98,6 +99,7 @@ public class Screen extends DashboardFragment implements
     private static List<AbstractPreferenceController> buildPreferenceControllers(
             Context context, Lifecycle lifecycle, Fragment fragment) {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new AccentColorPreferenceController(context));
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.accent_color"));
         controllers.add(new OverlayCategoryPreferenceController(context,
