@@ -114,4 +114,11 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
+
+    <!-- FOD icon picker -->
+    <string name="fod_icon_picker_category_title">FOD settings</string>
+
+    <!-- FOD animations -->
+    <string name="fod_recog_animation">Fingerprint animation</string>
+    <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
 </resources>

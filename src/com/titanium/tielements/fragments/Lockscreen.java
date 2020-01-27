@@ -32,6 +32,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.titanium.fod.FodUtils;
 import com.android.settings.Utils;
 
 public class Lockscreen extends SettingsPreferenceFragment implements
@@ -39,14 +40,24 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     
     private static final String TAG = "Lockscreen";
 
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+
+    private PreferenceCategory mFODIconPickerCategory;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.lockscreen);
+        PreferenceScreen prefScreen = getPreferenceScreen();
         setRetainInstance(true);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
+            prefScreen.removePreference(mFODIconPickerCategory);
+        }
     }
 
     @Override
