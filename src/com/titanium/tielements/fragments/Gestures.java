@@ -32,6 +32,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.titanium.TitaniumUtils;
 import com.android.settings.Utils;
 
 public class Gestures extends SettingsPreferenceFragment implements
@@ -40,8 +41,10 @@ public class Gestures extends SettingsPreferenceFragment implements
     private static final String TAG = "Gestures";
 
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
+    private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
 
     private ListPreference mTorchLongPressPowerTimeout;
+    private Preference mGestureSystemNavigation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,15 @@ public class Gestures extends SettingsPreferenceFragment implements
                 Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
         mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
         mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
+
+        mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
+        if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
+            mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
+        } else if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
+            mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
+        } else {
+            mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
+        }
     }
 
     @Override
