@@ -54,8 +54,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-         android:key="dtts_category"
-         android:title="@string/dtts_category_title">
+         android:key="dtt_category"
+         android:title="@string/dtt_category_title">
 
         <com.titanium.support.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
@@ -67,6 +67,12 @@
             android:key="double_tap_sleep_lockscreen"
             android:title="@string/double_tap_to_sleep_lockscreen_title"
             android:summary="@string/double_tap_to_sleep_lockscreen_summary"
+            android:defaultValue="true" />
+
+        <com.titanium.support.preferences.SecureSettingSwitchPreference
+            android:key="doze_pulse_on_double_tap"
+            android:title="@string/double_tap_on_doze_to_wake_title"
+            android:summary="@string/double_tap_on_doze_to_wake_summary"
             android:defaultValue="true" />
 
     </PreferenceCategory>
