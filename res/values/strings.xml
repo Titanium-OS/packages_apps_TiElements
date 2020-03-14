@@ -889,7 +889,6 @@
     <string name="pulse_ambient_light_show_always_summary">Show lights for all doze events and not just notifications</string>
 
     <!-- LS Charging animation -->
-    <string name="lockscreen_charging_animation_title">LS Charging animation</string>
     <string name="lockscreen_charging_animation_off">Off</string>
     <string name="lockscreen_charging_animation_flash">Flash</string>
     <string name="lockscreen_charging_animation_battery">Battery</string>
