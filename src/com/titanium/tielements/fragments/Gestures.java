@@ -33,6 +33,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.titanium.TitaniumUtils;
+import com.titanium.support.preferences.SystemSettingSwitchPreference;
 import com.android.settings.Utils;
 
 public class Gestures extends SettingsPreferenceFragment implements
@@ -43,10 +44,12 @@ public class Gestures extends SettingsPreferenceFragment implements
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
     private static final String NAVBAR_TUNER = "navbar_tuner";
+    private static final String PIXEL_NAV_ANIMATION = "pixel_nav_animation";
 
     private ListPreference mTorchLongPressPowerTimeout;
     private Preference mGestureSystemNavigation;
     private Preference mNavbarTuner;
+    private SystemSettingSwitchPreference mPixelNavAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,7 @@ public class Gestures extends SettingsPreferenceFragment implements
 
         mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
         mNavbarTuner = findPreference(NAVBAR_TUNER);
+        mPixelNavAnimation = findPreference(PIXEL_NAV_ANIMATION);
         if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
         } else if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
@@ -74,6 +78,7 @@ public class Gestures extends SettingsPreferenceFragment implements
         } else {
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
             prefScreen.removePreference(mNavbarTuner);
+            prefScreen.removePreference(mPixelNavAnimation);
         }
     }
 
