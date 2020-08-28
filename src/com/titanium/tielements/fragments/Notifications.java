@@ -40,8 +40,10 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final String TAG = "Notifications";
 
     private static final String KEY_CHARGING_LIGHT = "charging_light";
+    private static final String LED_CATEGORY = "led";
 
     private Preference mChargingLeds;
+    private PreferenceCategory mLedCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,11 +55,20 @@ public class Notifications extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mChargingLeds = findPreference(KEY_CHARGING_LIGHT);
-        if (mChargingLeds != null
-                && !getResources().getBoolean( 
-                        com.android.internal.R.bool.config_intrusiveBatteryLed)) {
-            prefScreen.removePreference(mChargingLeds);
+         Resources res = getResources();
+
+        boolean hasLED = res.getBoolean(
+                com.android.internal.R.bool.config_hasNotificationLed);
+        if (hasLED) {
+            mChargingLeds = findPreference(KEY_CHARGING_LIGHT);
+            if (mChargingLeds != null
+                    && !res.getBoolean(
+                            com.android.internal.R.bool.config_intrusiveBatteryLed)) {
+                prefScreen.removePreference(mChargingLeds);
+            }
+        } else {
+            mLedCategory = findPreference(LED_CATEGORY);
+            mLedCategory.setVisible(false);
         }
     }
 

@@ -11,6 +11,7 @@
         android:fragment="com.titanium.tielements.fragments.HeadsUpSettings" />
 
     <PreferenceCategory
+        android:key="led"
         android:title="@string/light_settings_header">
 
         <Preference
