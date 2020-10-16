@@ -29,11 +29,12 @@
         android:title="@string/qs_tile_title_visibility_title"
         android:defaultValue="true" />
 
-    <com.titanium.support.preferences.SystemSettingSwitchPreference
+    <com.titanium.support.preferences.SystemSettingListPreference
         android:key="qs_datausage"
         android:title="@string/qs_datausage_title"
-        android:summary="@string/qs_datausage_subtitle"
-        android:defaultValue="false" />
+        android:entries="@array/qs_datausage_entries"
+        android:entryValues="@array/qs_datausage_values"
+        android:defaultValue="0" />
 
     <com.titanium.support.preferences.SystemSettingSwitchPreference
         android:key="status_bar_locked_on_secure_keyguard"
