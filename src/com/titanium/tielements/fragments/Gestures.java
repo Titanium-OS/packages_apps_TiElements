@@ -42,9 +42,11 @@ public class Gestures extends SettingsPreferenceFragment implements
 
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
     private static final String GESTURE_SYSTEM_NAVIGATION = "gesture_system_navigation";
+    private static final String NAVBAR_TUNER = "navbar_tuner";
 
     private ListPreference mTorchLongPressPowerTimeout;
     private Preference mGestureSystemNavigation;
+    private Preference mNavbarTuner;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class Gestures extends SettingsPreferenceFragment implements
         setRetainInstance(true);
 
         ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mTorchLongPressPowerTimeout = findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
         mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
@@ -63,12 +66,14 @@ public class Gestures extends SettingsPreferenceFragment implements
         mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
 
         mGestureSystemNavigation = findPreference(GESTURE_SYSTEM_NAVIGATION);
+        mNavbarTuner = findPreference(NAVBAR_TUNER);
         if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.legacy_navigation_title));
         } else if (TitaniumUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
             mGestureSystemNavigation.setSummary(getString(R.string.swipe_up_to_switch_apps_title));
         } else {
             mGestureSystemNavigation.setSummary(getString(R.string.edge_to_edge_navigation_title));
+            prefScreen.removePreference(mNavbarTuner);
         }
     }
 
