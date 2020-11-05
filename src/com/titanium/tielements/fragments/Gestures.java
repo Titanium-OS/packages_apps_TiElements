@@ -39,6 +39,10 @@ public class Gestures extends SettingsPreferenceFragment implements
     
     private static final String TAG = "Gestures";
 
+    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT = "torch_long_press_power_timeout";
+
+    private ListPreference mTorchLongPressPowerTimeout;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,13 @@ public class Gestures extends SettingsPreferenceFragment implements
         setRetainInstance(true);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mTorchLongPressPowerTimeout = findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+        mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
+        int TorchTimeout = Settings.System.getInt(getContentResolver(),
+                Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
+        mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
+        mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
     }
 
     @Override
@@ -66,6 +77,17 @@ public class Gestures extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
+        if (preference == mTorchLongPressPowerTimeout) {
+            String TorchTimeout = (String) objValue;
+            int TorchTimeoutValue = Integer.parseInt(TorchTimeout);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, TorchTimeoutValue);
+            int TorchTimeoutIndex = mTorchLongPressPowerTimeout
+                    .findIndexOfValue(TorchTimeout);
+            mTorchLongPressPowerTimeout
+                    .setSummary(mTorchLongPressPowerTimeout.getEntries()[TorchTimeoutIndex]);
+            return true;
+        }
         return true;
     }
 
