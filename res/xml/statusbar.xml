@@ -21,6 +21,13 @@
             android:summary="@string/battery_percent_summary"
             android:fragment="com.titanium.tielements.fragments.StatusbarBatterySettings"/>
 
+        <!-- bluetooth battery level --> 
+        <com.titanium.support.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_show_battery"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
+
         <com.titanium.support.preferences.SystemSettingSwitchPreference
             android:key="show_fourg"
             android:title="@string/show_fourg_title"

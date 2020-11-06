@@ -59,6 +59,12 @@ public class Statusbar extends SettingsPreferenceFragment implements
         super.onResume();
     }
 
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
+    }
+
     @Override
     public void onPause() {
         super.onPause();
