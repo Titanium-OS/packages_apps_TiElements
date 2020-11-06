@@ -32,6 +32,12 @@
             android:summary="@string/battery_percent_summary"
             android:fragment="com.titanium.tielements.fragments.StatusbarBatterySettings"/>
 
+        <!--Network traffic -->
+        <Preference 
+            android:key="network_traffic"
+            android:fragment="com.titanium.tielements.fragments.NetworkTraffic"
+            android:title="@string/traffic_title" />
+
         <!-- bluetooth battery level --> 
         <com.titanium.support.preferences.SystemSettingSwitchPreference
             android:key="bluetooth_show_battery"
