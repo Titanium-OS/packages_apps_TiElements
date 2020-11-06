@@ -30,6 +30,12 @@
         android:defaultValue="true" />
 
     <com.titanium.support.preferences.SystemSettingSwitchPreference
+        android:key="qs_datausage"
+        android:title="@string/qs_datausage_title"
+        android:summary="@string/qs_datausage_subtitle"
+        android:defaultValue="false" />
+
+    <com.titanium.support.preferences.SystemSettingSwitchPreference
         android:key="status_bar_locked_on_secure_keyguard"
         android:title="@string/lockscreen_qs_disabled_title"
         android:summary="@string/lockscreen_qs_disabled_summary"
