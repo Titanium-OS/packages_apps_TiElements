@@ -15,4 +15,7 @@
     <color name="grey_80">#37474F</color>
     <color name="grey_90">#263238</color>
     <color name="red_700">#D32F2F</color>
+
+    <!-- Previews -->
+    <color name="preview_container_border">#ECECEC</color>
 </resources>

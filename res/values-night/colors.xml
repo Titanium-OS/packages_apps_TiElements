@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Previews -->
+    <color name="preview_container_border">#14FFFFFF</color>
+</resources>
