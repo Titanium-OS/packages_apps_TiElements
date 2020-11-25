@@ -72,4 +72,8 @@
     <string name="double_tap_to_sleep_summary">Double tap status bar to put the device to sleep</string>
     <string name="double_tap_to_sleep_lockscreen_title">Lockscreen</string>
     <string name="double_tap_to_sleep_lockscreen_summary">Double tap on lock screen to put the device to sleep</string>
+
+    <!-- Screenshot Sound -->
+    <string name="screenshot_sound_title">Screenshot sound</string>
+    <string name="screenshot_sound_summary">Toggle sound played while taking screenshot</string>
 </resources>

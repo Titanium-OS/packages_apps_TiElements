@@ -20,4 +20,11 @@
     android:title="@string/menu_misc"
     xmlns:settings="http://schemas.android.com/apk/res-auto">
 
+    <!-- Screenshot Sound --> 
+    <com.titanium.support.preferences.SystemSettingSwitchPreference
+        android:key="screenshot_sound"
+        android:title="@string/screenshot_sound_title"
+        android:summary="@string/screenshot_sound_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
