@@ -4,4 +4,10 @@
     android:title="@string/menu_battery"
     xmlns:settings="http://schemas.android.com/apk/res-auto">
 
+    <Preference 
+        android:key="aggressive_battery_saver_category"
+        android:title="@string/aggressive_battery_saver_title"
+        android:summary="@string/aggressive_battery_saver_summary"
+        android:fragment="com.titanium.tielements.fragments.AggressiveBatterySaver" />
+
 </PreferenceScreen>

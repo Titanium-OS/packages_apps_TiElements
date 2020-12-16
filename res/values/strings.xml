@@ -410,4 +410,13 @@
     <string name="theme_customization_icon_shape_title">Icon shape</string>
     <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
     <string name="theme_customization_sysui_icon_title">Status bar icon style</string>
+
+    <!-- Aggressive battery -->
+    <string name="aggressive_battery_saver_title">Aggressive Battery Saver</string>
+    <string name="aggressive_battery_saver_summary">Extend your battery life in critical moments when you need to make it last</string>
+    <string name="aggressive_battery_saver_explainer">"Further extend your battery in critical moments when you need to make it last.
+
+Aggressive Battery Saver helps you increase battery life by using your device less. Aggressive Idle is a feature that makes the device idle constants more aggressive and ignores device motion when entering doze mode.
+
+Aggressive Standby is a feature that stops apps from running in the background as much."</string>
 </resources>
