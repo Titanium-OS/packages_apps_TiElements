@@ -34,10 +34,18 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
+import com.titanium.support.preferences.CustomSeekBarPreference;
+
 public class Ambient extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     
     private static final String TAG = "Ambient";
+
+    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
+    private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
+
+    private CustomSeekBarPreference mPulseBrightness;
+    private CustomSeekBarPreference mDozeBrightness;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +55,26 @@ public class Ambient extends SettingsPreferenceFragment implements
         setRetainInstance(true);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        int defaultDoze = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessDoze);
+        int defaultPulse = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessPulse);
+        if (defaultPulse == -1) {
+            defaultPulse = defaultDoze;
+        }
+
+        mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
+        int value = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_BRIGHTNESS, defaultPulse);
+        mPulseBrightness.setValue(value);
+        mPulseBrightness.setOnPreferenceChangeListener(this);
+
+        mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.DOZE_BRIGHTNESS, defaultDoze);
+        mDozeBrightness.setValue(value);
+        mDozeBrightness.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -66,6 +94,17 @@ public class Ambient extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
+        if (preference == mPulseBrightness) {
+            int value = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.PULSE_BRIGHTNESS, value);
+            return true;
+        } else if (preference == mDozeBrightness) {
+            int value = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOZE_BRIGHTNESS, value);
+            return true;
+        }
         return true;
     }
 
