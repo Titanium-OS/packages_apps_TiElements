@@ -126,44 +126,41 @@ public class ElementsFragment extends SettingsPreferenceFragment implements View
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case  R.id.statusbar_menu:
-                loadFragment(Constants.STATUS_BAR_MENU_FRAGMENT,true,null,new Statusbar());
-                break;
-            case  R.id.gestures_menu:
-                loadFragment(Constants.GESTURES_MENU_FRAGMENT,true,null,new Gestures());
-                break;
-            case  R.id.quick_settings_menu:
-                loadFragment(Constants.QUICK_SETTINGS_MENU_FRAGMENT,true,null,new QuickSettings());
-                break;
-            case  R.id.notifications_menu:
-                loadFragment(Constants.RECENT_MENU_FRAGMENT,true,null,new Notifications());
-                break;
-            case  R.id.lockscreen_menu:
-                loadFragment(Constants.LOCK_SCREEN_MENU_FRAGMENT,true,null,new Lockscreen());
-                break;
-            case  R.id.misc_menu:
-                loadFragment(Constants.MISC_MENU_FRAGMENT,true,null,new Misc());
-                break;
-            case  R.id.ambient_menu:
-                loadFragment(Constants.AMBIENT_MENU_FRAGMENT,true,null,new Ambient());
-                break;
-            case  R.id.battery_menu:
-                loadFragment(Constants.BATTERY_MENU_FRAGMENT,true,null,new Battery());
-                break;
-            case  R.id.screen_menu:
-                loadFragment(Constants.SCREEN_MENU_FRAGMENT,true,null,new Screen());
-                break;
-            case  R.id.animations_menu:
-                loadFragment(Constants.ANIMATION_MENU_FRAGMENT,true,null,new Animations());
-                break;
-            case  R.id.buttons_menu:
+        if (view.getId() == R.id.statusbar_menu) { 
+            loadFragment(Constants.STATUS_BAR_MENU_FRAGMENT,true,null,new Statusbar());
+        } 
+        else if (view.getId() == R.id.gestures_menu) {
+            loadFragment(Constants.GESTURES_MENU_FRAGMENT,true,null,new Gestures());
+        }
+        else if (view.getId() == R.id.quick_settings_menu) {
+            loadFragment(Constants.QUICK_SETTINGS_MENU_FRAGMENT,true,null,new QuickSettings());
+        }
+        else if (view.getId() == R.id.notifications_menu) {
+            loadFragment(Constants.RECENT_MENU_FRAGMENT,true,null,new Notifications());
+        }
+        else if (view.getId() == R.id.lockscreen_menu) {
+            loadFragment(Constants.LOCK_SCREEN_MENU_FRAGMENT,true,null,new Lockscreen());
+        }
+        else if (view.getId() == R.id.misc_menu) {
+            loadFragment(Constants.MISC_MENU_FRAGMENT,true,null,new Misc());
+        }
+        else if (view.getId() == R.id.ambient_menu) {
+            loadFragment(Constants.AMBIENT_MENU_FRAGMENT,true,null,new Ambient());
+        }
+        else if (view.getId() == R.id.battery_menu) {
+            loadFragment(Constants.BATTERY_MENU_FRAGMENT,true,null,new Battery());
+        }
+        else if (view.getId() == R.id.screen_menu) {
+            loadFragment(Constants.SCREEN_MENU_FRAGMENT,true,null,new Screen());
+        }
+        else if (view.getId() == R.id.animations_menu) {
+            loadFragment(Constants.ANIMATION_MENU_FRAGMENT,true,null,new Animations());
+        }
+        else if (view.getId() == R.id.buttons_menu) {
             loadFragment(Constants.BUTTONS_MENU_FRAGMENT,true,null,new Buttons());
-                break;
-            case  R.id.about_menu:
-                loadFragment(Constants.ABOUT_MENU_FRAGMENT,true,null,new About());
-                break;
-
+        }
+        else if (view.getId() == R.id.about_menu) {
+            loadFragment(Constants.ABOUT_MENU_FRAGMENT,true,null,new About());
         }
     }
 

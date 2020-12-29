@@ -34,21 +34,10 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
-import com.android.settingslib.search.SearchIndexable;
-import android.provider.SearchIndexableResource;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Gestures extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
+        Preference.OnPreferenceChangeListener {
     
     private static final String TAG = "Gestures";
-     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
-            "torch_long_press_power_timeout";
-
-    private ListPreference mTorchLongPressPowerTimeout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,17 +47,6 @@ public class Gestures extends SettingsPreferenceFragment implements
         setRetainInstance(true);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-        Resources resources = getResources();
-
-        mTorchLongPressPowerTimeout =
-                    (ListPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
-
-        mTorchLongPressPowerTimeout.setOnPreferenceChangeListener(this);
-        int TorchTimeout = Settings.System.getInt(getContentResolver(),
-                        Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
-        mTorchLongPressPowerTimeout.setValue(Integer.toString(TorchTimeout));
-        mTorchLongPressPowerTimeout.setSummary(mTorchLongPressPowerTimeout.getEntry());
     }
 
     @Override
@@ -86,41 +64,9 @@ public class Gestures extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mTorchLongPressPowerTimeout) {
-            String TorchTimeout = (String) newValue;
-            int TorchTimeoutValue = Integer.parseInt(TorchTimeout);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, TorchTimeoutValue);
-            int TorchTimeoutIndex = mTorchLongPressPowerTimeout
-                    .findIndexOfValue(TorchTimeout);
-            mTorchLongPressPowerTimeout
-                    .setSummary(mTorchLongPressPowerTimeout.getEntries()[TorchTimeoutIndex]);
-            return true;
-        }
-        return false;
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        final String key = preference.getKey();
+        return true;
     }
-
-    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-        new BaseSearchIndexProvider() {
-            @Override
-            public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                    boolean enabled) {
-                ArrayList<SearchIndexableResource> result =
-                        new ArrayList<SearchIndexableResource>();
-
-                SearchIndexableResource sir = new SearchIndexableResource(context);
-                sir.xmlResId = R.xml.gesture;
-                result.add(sir);
-                return result;
-            }
-
-            @Override
-            public List<String> getNonIndexableKeys(Context context) {
-                List<String> keys = super.getNonIndexableKeys(context);
-                return keys;
-            }
-    };
 
 }

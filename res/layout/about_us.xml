@@ -71,15 +71,22 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <com.mikhaellopez.circularimageview.CircularImageView
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/saikatCardView"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/saikat"
-                                app:civ_border="true"
-                                app:civ_border_color="@color/grey_10"
-                                app:civ_border_width="2dp"
-                                app:civ_shadow="true"
-                                app:civ_shadow_radius="0" />
+                                app:cardCornerRadius="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                >
+                                <ImageView
+                                    android:id="@+id/saikat"
+                                    android:src="@drawable/saikat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -107,21 +114,28 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <com.mikhaellopez.circularimageview.CircularImageView
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/sonalCardView"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/nikesh"
-                                app:civ_border="true"
-                                app:civ_border_color="@color/grey_10"
-                                app:civ_border_width="2dp"
-                                app:civ_shadow="true"
-                                app:civ_shadow_radius="0" />
+                                app:cardCornerRadius="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                >
+                                <ImageView
+                                    android:id="@+id/sonal"
+                                    android:src="@drawable/sonal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/spacing_medium"
-                                android:text="Nikesh"
+                                android:text="Sonal"
                                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                                 android:textColor="?android:attr/textColorPrimary"
                                 app:fontFamily="sans-serif-medium" />
@@ -143,15 +157,22 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <com.mikhaellopez.circularimageview.CircularImageView
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/abhirajCardView"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/abhiraj"
-                                app:civ_border="true"
-                                app:civ_border_color="@color/grey_10"
-                                app:civ_border_width="2dp"
-                                app:civ_shadow="true"
-                                app:civ_shadow_radius="0" />
+                                app:cardCornerRadius="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                >
+                                <ImageView
+                                    android:id="@+id/abhiraj"
+                                    android:src="@drawable/abhiraj"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -190,21 +211,28 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <com.mikhaellopez.circularimageview.CircularImageView
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/nikeshCardView"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/sonal"
-                                app:civ_border="true"
-                                app:civ_border_color="@color/grey_10"
-                                app:civ_border_width="2dp"
-                                app:civ_shadow="true"
-                                app:civ_shadow_radius="0" />
+                                app:cardCornerRadius="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                >
+                                <ImageView
+                                    android:id="@+id/nikesh"
+                                    android:src="@drawable/nikesh"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/spacing_medium"
-                                android:text="Sonal"
+                                android:text="Nikesh"
                                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                                 android:textColor="?android:attr/textColorPrimary"
                                 app:fontFamily="sans-serif-medium" />
@@ -226,15 +254,22 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <com.mikhaellopez.circularimageview.CircularImageView
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/rogerCardView"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/roger"
-                                app:civ_border="true"
-                                app:civ_border_color="@color/grey_10"
-                                app:civ_border_width="2dp"
-                                app:civ_shadow="true"
-                                app:civ_shadow_radius="0" />
+                                app:cardCornerRadius="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                >
+                                <ImageView
+                                    android:id="@+id/roger"
+                                    android:src="@drawable/roger"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -262,15 +297,22 @@
                             android:gravity="center"
                             android:orientation="vertical">
 
-                            <com.mikhaellopez.circularimageview.CircularImageView
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/vivekCardView"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:src="@drawable/vivek"
-                                app:civ_border="true"
-                                app:civ_border_color="@color/grey_10"
-                                app:civ_border_width="2dp"
-                                app:civ_shadow="true"
-                                app:civ_shadow_radius="0" />
+                                app:cardCornerRadius="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                >
+                                <ImageView
+                                    android:id="@+id/vivek"
+                                    android:src="@drawable/vivek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    />
+                            </androidx.cardview.widget.CardView>
 
                             <TextView
                                 android:layout_width="wrap_content"

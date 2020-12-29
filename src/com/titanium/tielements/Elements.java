@@ -28,7 +28,6 @@ import android.content.SharedPreferences;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.dashboard.SummaryLoader;
 
 public class Elements extends SettingsPreferenceFragment {
     private FragmentManager mFragmentManager;
@@ -71,29 +70,5 @@ public class Elements extends SettingsPreferenceFragment {
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.TIELEMENTS;
     }
-
-    private static class SummaryProvider implements SummaryLoader.SummaryProvider {
-        private final Context mContext;
-        private final SummaryLoader mSummaryLoader;
-
-        public SummaryProvider(Context context, SummaryLoader summaryLoader) {
-            mContext = context;
-            mSummaryLoader = summaryLoader;
-        }
-
-        @Override
-        public void setListening(boolean listening) {
-            if (listening) {
-                mSummaryLoader.setSummary(this, mContext.getString(R.string.build_tweaks_summary_title));
-            }
-        }
-    }
-
-    public static final SummaryLoader.SummaryProviderFactory SUMMARY_PROVIDER_FACTORY = new SummaryLoader.SummaryProviderFactory() {
-        @Override
-        public SummaryLoader.SummaryProvider createSummaryProvider(Activity activity, SummaryLoader summaryLoader) {
-            return new SummaryProvider(activity, summaryLoader);
-        }
-    };
 
 }

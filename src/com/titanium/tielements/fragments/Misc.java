@@ -29,27 +29,15 @@ import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
-import com.titanium.support.preferences.SystemSettingMasterSwitchPreference;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.Utils;
 
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
-import com.android.settingslib.search.SearchIndexable;
-import android.provider.SearchIndexableResource;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Misc extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, Indexable {
+        Preference.OnPreferenceChangeListener {
     
-    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String TAG = "Misc";
-
-    private SystemSettingMasterSwitchPreference mGamingMode;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,11 +47,6 @@ public class Misc extends SettingsPreferenceFragment implements
         setRetainInstance(true);
 
         ContentResolver resolver = getActivity().getContentResolver();
-
-        mGamingMode = (SystemSettingMasterSwitchPreference) findPreference(GAMING_MODE_ENABLED);
-        mGamingMode.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.GAMING_MODE_ENABLED, 0) == 1));
-        mGamingMode.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -81,36 +64,9 @@ public class Misc extends SettingsPreferenceFragment implements
         super.onPause();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mGamingMode) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.GAMING_MODE_ENABLED, value ? 1 : 0);
-            return true;
-        }
-        return false;
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        final String key = preference.getKey();
+        return true;
     }
-
-    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-        new BaseSearchIndexProvider() {
-            @Override
-            public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                    boolean enabled) {
-                ArrayList<SearchIndexableResource> result =
-                        new ArrayList<SearchIndexableResource>();
-
-                SearchIndexableResource sir = new SearchIndexableResource(context);
-                sir.xmlResId = R.xml.misc;
-                result.add(sir);
-                return result;
-            }
-
-            @Override
-            public List<String> getNonIndexableKeys(Context context) {
-                List<String> keys = super.getNonIndexableKeys(context);
-                return keys;
-            }
-    };
 
 }
