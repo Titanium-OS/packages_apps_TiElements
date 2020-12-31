@@ -108,6 +108,7 @@ public class ElementsFragment extends SettingsPreferenceFragment implements View
 
     private void loadFragment(String tag, boolean addToStack, Bundle bundle, Fragment setFragment) {
         mFragmentTransaction = mFragmentManager.beginTransaction();
+        mFragmentTransaction.setCustomAnimations(R.anim.activity_open_enter, R.anim.activity_close_exit);
         mFragment = setFragment;
 
         if (addToStack) {
