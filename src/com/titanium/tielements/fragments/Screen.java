@@ -47,6 +47,7 @@ import com.android.settings.Utils;
 
 import com.titanium.tielements.display.QsTileStylePreferenceController;
 import com.titanium.tielements.display.AccentColorPreferenceController;
+import com.android.settings.display.EnableBlursPreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,6 +110,7 @@ public class Screen extends DashboardFragment implements
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack.android"));
         controllers.add(new QsTileStylePreferenceController(context));
+        controllers.add(new EnableBlursPreferenceController(context));
         return controllers;
     }
 
