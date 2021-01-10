@@ -65,9 +65,6 @@ public class AccentColorPreferenceController extends AbstractPreferenceControlle
             mAccentColor.setSummary(hexColor);
         }
         mAccentColor.setNewPreviewColor(intColor);
-        if (hexColor.equals("#ff1a73e8"))
-            mAccentColor.setCustomColorPreview(mContext.getResources()
-                    .getColor(R.color.titanium_icon_tint_color));
     }
 
     @Override

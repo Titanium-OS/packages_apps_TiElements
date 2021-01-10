@@ -16,8 +16,6 @@
     <color name="grey_90">#263238</color>
     <color name="red_700">#D32F2F</color>
 
-    <color name="titanium_icon_tint_color">@*android:color/accent_device_default_light</color>
-
     <!-- Previews -->
     <color name="preview_container_border">#ECECEC</color>
 </resources>
