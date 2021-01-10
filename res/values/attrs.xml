@@ -25,6 +25,4 @@
         <attr name="icon" format="reference"/>
     </declare-styleable>
 
-    <attr name="showReset" format="boolean" />
-
 </resources>
