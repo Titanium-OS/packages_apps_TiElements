@@ -53,12 +53,6 @@
 
     </PreferenceCategory>
 
-    <!-- Aosp gesture -->
-    <Preference
-        android:key="gesture_settings"
-        android:title="@string/aosp_gesture_title"
-        android:fragment="com.android.settings.gestures.GestureSettings" />
-
     <PreferenceCategory
          android:key="dtt_category"
          android:title="@string/dtt_category_title">
